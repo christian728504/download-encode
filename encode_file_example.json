@@ -1,0 +1,322 @@
+{
+    "@id": "/files/ENCFF883VDZ/",
+    "@type": [
+      "File",
+      "Item"
+    ],
+    "accession": "ENCFF883VDZ",
+    "analysis_step_version": {
+      "schema_version": "4",
+      "aliases": [
+        "encode:hic-diploidification-step-versions"
+      ],
+      "software_versions": [
+        {
+          "schema_version": "4",
+          "aliases": [
+            "encode:samtools-1.14"
+          ],
+          "software": {
+            "aliases": [],
+            "references": [],
+            "date_created": "2015-02-12T21:54:17.918472+00:00",
+            "@type": [
+              "Software",
+              "Item"
+            ],
+            "submitted_by": "/users/81a6cc12-2847-4e2e-8f2c-f566699eb29e/",
+            "software_type": [
+              "other"
+            ],
+            "description": "Samtools is a suite of programs for interacting with high-throughput sequencing data.  SAMtools implements various utilities for post-processing alignments in the SAM format, such as indexing, variant caller and alignment viewer, and thus provides universal tools for processing read alignments (PMID:19505943).",
+            "lab": "/labs/encode-consortium/",
+            "title": "Samtools",
+            "used_by": [
+              "community",
+              "ENCODE"
+            ],
+            "uuid": "ce18defa-8989-4067-9ac7-2f13734223da",
+            "url": "http://www.htslib.org/",
+            "source_url": "http://sourceforge.net/projects/samtools/files/samtools/",
+            "schema_version": "10",
+            "award": "/awards/ENCODE/",
+            "versions": [
+              "/software-versions/d44db1ed-3af1-4e3b-ae7a-b0fb1085877f/",
+              "/software-versions/f21b7bbf-6178-4f1a-8c58-caeb6488bfc3/",
+              "/software-versions/2f4d48db-d4ec-4e9e-8c22-9fc5ee6c49ac/",
+              "/software-versions/ba604a77-9683-4f88-b733-6a14d17e5c1d/",
+              "/software-versions/4c911ae3-9007-4777-9680-2c526ab8fdbb/",
+              "/software-versions/db773727-4185-4f43-8ec9-1671fc9c5d02/",
+              "/software-versions/bebd8903-70cc-44a8-bd5e-42414431e685/",
+              "/software-versions/6b5dd7cf-aa67-457c-9a79-64818e3cc5ff/",
+              "/software-versions/ef27c5aa-7ffc-4ba2-836f-6b857918f72d/",
+              "/software-versions/aba3a24e-9348-4134-afe8-f19cdf22ee11/",
+              "/software-versions/ff27407c-47d2-4d4a-85fe-f64e25a43ce2/",
+              "/software-versions/9fa6c427-6912-4529-8664-d7aaf54e9b5f/",
+              "/software-versions/8e3f7c06-d296-4cba-9958-1ccfa9a2b9bc/",
+              "/software-versions/4cee829a-2538-4b19-9adc-6eb981f8d972/",
+              "/software-versions/51c1e7da-b774-4f8a-acf8-d325678b2d3b/",
+              "/software-versions/9b66aecd-fa8b-4bd6-84db-5b0ca2e87a9e/",
+              "/software-versions/371fa24d-e400-4aac-a26a-f91e26b18ff5/"
+            ],
+            "name": "samtools",
+            "@id": "/software/samtools/",
+            "status": "released"
+          },
+          "date_created": "2022-03-16T21:00:49.888416+00:00",
+          "@type": [
+            "SoftwareVersion",
+            "Item"
+          ],
+          "submitted_by": "/users/6667a92a-d202-493a-8c7d-7a56d1380356/",
+          "@id": "/software-versions/371fa24d-e400-4aac-a26a-f91e26b18ff5/",
+          "downloaded_url": "https://sourceforge.net/projects/samtools/files/samtools/1.14/",
+          "version": "1.14",
+          "uuid": "371fa24d-e400-4aac-a26a-f91e26b18ff5",
+          "status": "released"
+        },
+        {
+          "schema_version": "4",
+          "aliases": [
+            "encode:3d-dna-63029"
+          ],
+          "software": {
+            "aliases": [],
+            "references": [],
+            "date_created": "2022-03-16T20:55:51.504347+00:00",
+            "@type": [
+              "Software",
+              "Item"
+            ],
+            "submitted_by": "/users/6667a92a-d202-493a-8c7d-7a56d1380356/",
+            "description": "We begin with a series of iterative steps whose goal is to eliminate misjoins in the input scaffolds. Each step begins with a scaffold pool (initially, this pool is the set of input scaffolds themselves). The scaffolding algorithm is used to order and orient these scaffolds. Next, the misjoin correction algorithm is applied to detect errors in the scaffold pool, thus creating an edited scaffold pool. Finally, the edited scaffold pool is used as an input for the next iteration of the misjoin correction algorithm. The ultimate effect of these iterations is to reliably detect misjoins in the input scaffolds without removing correctly assembled sequence. After this process is complete, the scaffolding algorithm is applied to the revised input scaffolds, and the output – a single “megascaffold” which concatenates all the chromosomes – is retained for post-processing.",
+            "lab": "/labs/erez-aiden/",
+            "title": "3d-dna",
+            "uuid": "d2529df0-78cc-46a2-b01f-c9b48cc842b2",
+            "source_url": "https://github.com/aidenlab/3d-dna",
+            "schema_version": "10",
+            "award": "/awards/UM1HG009375/",
+            "versions": [
+              "/software-versions/ef0bec8e-2d22-457f-a3a6-ad03df6b1acc/"
+            ],
+            "name": "3d-dna",
+            "@id": "/software/3d-dna/",
+            "status": "released"
+          },
+          "date_created": "2022-03-16T21:03:17.757736+00:00",
+          "@type": [
+            "SoftwareVersion",
+            "Item"
+          ],
+          "submitted_by": "/users/6667a92a-d202-493a-8c7d-7a56d1380356/",
+          "@id": "/software-versions/ef0bec8e-2d22-457f-a3a6-ad03df6b1acc/",
+          "downloaded_url": "https://github.com/aidenlab/3d-dna/commit/63029aa3bc5ba9bbdad9dd9771ace583cc95e273",
+          "version": "63029aa3bc5ba9bbdad9dd9771ace583cc95e273",
+          "uuid": "ef0bec8e-2d22-457f-a3a6-ad03df6b1acc",
+          "status": "released"
+        },
+        {
+          "schema_version": "4",
+          "aliases": [],
+          "software": {
+            "aliases": [
+              "encode:juicer"
+            ],
+            "references": [],
+            "purpose": [
+              "HiC"
+            ],
+            "date_created": "2018-02-23T00:07:48.376455+00:00",
+            "@type": [
+              "Software",
+              "Item"
+            ],
+            "submitted_by": "/users/98fb23d3-0d79-4c3d-981d-01539e6589f1/",
+            "description": "Juicer is a platform for analyzing high-resolution Hi-C data.",
+            "lab": "/labs/erez-aiden/",
+            "title": "Juicer",
+            "used_by": [
+              "uniform processing pipelines",
+              "ENCODE"
+            ],
+            "uuid": "f828efd1-773a-449c-ba40-0e0144713fcb",
+            "url": "https://github.com/theaidenlab/juicer",
+            "schema_version": "10",
+            "award": "/awards/UM1HG009375/",
+            "versions": [
+              "/software-versions/fc2bf4d3-271e-4086-a24f-d250d5d6f1cf/",
+              "/software-versions/cb060af3-ecc0-4876-82c6-4c26649d8cd4/",
+              "/software-versions/2dc6e2e4-950a-4eb1-9c47-32a042c63079/",
+              "/software-versions/709cf9ca-fee5-49a0-9f61-b5718159d447/",
+              "/software-versions/c43a5c4f-486d-4561-aa55-4d512db5b3de/",
+              "/software-versions/de62a1ad-ca0e-413c-aa4e-0e24a2278e60/",
+              "/software-versions/f263b742-cfb0-4710-bbc8-fa1c2c8d1a67/",
+              "/software-versions/b78e3e43-fdd2-4f6f-a442-b322d7251a72/",
+              "/software-versions/b2ab19ae-3223-41ae-a328-2dedcde4add4/",
+              "/software-versions/64c1f49b-cdcd-4758-aa56-5e7bc19b1368/",
+              "/software-versions/5b87cad9-a611-4e6c-a375-2c7672765cb9/",
+              "/software-versions/75fc6160-ee1d-4e5b-8235-27809de94538/",
+              "/software-versions/4942d964-75f3-481f-bc66-43fd6021dab3/",
+              "/software-versions/bcbce2dc-35bf-4f21-8fa6-b41037f42fce/",
+              "/software-versions/57ca1252-879d-4f2a-bfa1-8e45ce391059/",
+              "/software-versions/b0798510-0c4d-4632-925c-deaaafa6f7c1/"
+            ],
+            "name": "juicer",
+            "@id": "/software/juicer/",
+            "status": "released"
+          },
+          "date_created": "2022-03-16T21:24:39.432362+00:00",
+          "@type": [
+            "SoftwareVersion",
+            "Item"
+          ],
+          "submitted_by": "/users/6667a92a-d202-493a-8c7d-7a56d1380356/",
+          "@id": "/software-versions/57ca1252-879d-4f2a-bfa1-8e45ce391059/",
+          "downloaded_url": "https://github.com/aidenlab/juicer/commit/50d557f1d4725a475071fce5975839602bd311e5",
+          "version": "50d557f1d4725a475071fce5975839602bd311e5",
+          "uuid": "57ca1252-879d-4f2a-bfa1-8e45ce391059",
+          "status": "released"
+        }
+      ],
+      "date_created": "2022-03-16T21:27:45.038904+00:00",
+      "analysis_step": {
+        "aliases": [
+          "encode:hic-diploidification-step"
+        ],
+        "analysis_step_types": [
+          "signal generation",
+          "interaction calling"
+        ],
+        "documents": [],
+        "date_created": "2022-03-16T21:19:02.589268+00:00",
+        "@type": [
+          "AnalysisStep",
+          "Item"
+        ],
+        "input_file_types": [
+          "phased variant calls",
+          "alignments"
+        ],
+        "submitted_by": "/users/6667a92a-d202-493a-8c7d-7a56d1380356/",
+        "current_version": "/analysis-step-versions/hic-diploidification-step-v-1-1/",
+        "title": "HiC diploidification step",
+        "step_label": "hic-diploidification-step",
+        "uuid": "dfe1f8f0-5767-4a2c-9589-90d192860d53",
+        "schema_version": "17",
+        "output_file_types": [
+          "haplotype-specific contact matrix",
+          "haplotype-specific nuclease cleavage frequency",
+          "haplotype-specific nuclease cleavage corrected frequency"
+        ],
+        "major_version": 1,
+        "pipelines": [
+          {
+            "analysis_steps": [
+              "/analysis-steps/hic-diploidification-step-v-1/"
+            ],
+            "pipeline_version": 1,
+            "aliases": [
+              "encode:hic_diploidification"
+            ],
+            "references": [],
+            "documents": [],
+            "assay_term_names": [
+              "HiC"
+            ],
+            "date_created": "2022-03-16T20:44:16.079055+00:00",
+            "@type": [
+              "Pipeline",
+              "Item"
+            ],
+            "submitted_by": "/users/6667a92a-d202-493a-8c7d-7a56d1380356/",
+            "accession": "ENCPL478DPO",
+            "lab": "/labs/encode-processing-pipeline/",
+            "title": "Hi-C diploidification pipeline",
+            "uuid": "6feecc72-2038-4d3c-a6b0-64350e4f69bb",
+            "source_url": "https://github.com/ENCODE-DCC/hic-pipeline",
+            "schema_version": "14",
+            "award": "/awards/UM1HG009375/",
+            "alternate_accessions": [],
+            "@id": "/pipelines/ENCPL478DPO/",
+            "status": "released"
+          }
+        ],
+        "versions": [
+          "/analysis-step-versions/hic-diploidification-step-v-1-1/"
+        ],
+        "name": "hic-diploidification-step-v-1",
+        "@id": "/analysis-steps/hic-diploidification-step-v-1/",
+        "status": "released"
+      },
+      "@type": [
+        "AnalysisStepVersion",
+        "Item"
+      ],
+      "name": "hic-diploidification-step-v-1-1",
+      "submitted_by": "/users/6667a92a-d202-493a-8c7d-7a56d1380356/",
+      "@id": "/analysis-step-versions/hic-diploidification-step-v-1-1/",
+      "uuid": "aaf260d0-aa38-47bf-b1b1-dbe7bad27449",
+      "status": "released",
+      "minor_version": 1
+    },
+    "assay_term_name": "HiC",
+    "assembly": "GRCh38",
+    "award": {
+      "project": "ENCODE"
+    },
+    "biological_replicates": [
+      1
+    ],
+    "biosample_ontology": {
+      "organ_slims": [
+        "blood",
+        "bodily fluid"
+      ],
+      "term_name": "naive thymus-derived CD4-positive, alpha-beta T cell"
+    },
+    "dataset": "/experiments/ENCSR458VJJ/",
+    "date_created": "2024-11-23T23:13:07.715986+00:00",
+    "derived_from": [
+      "/files/ENCFF232YLW/",
+      "/files/GRCh38_EBV.chrom.sizes/",
+      "/files/ENCFF992VZE/"
+    ],
+    "file_format": "bigWig",
+    "file_size": 349867420,
+    "file_type": "bigWig",
+    "href": "/files/ENCFF883VDZ/@@download/ENCFF883VDZ.bigWig",
+    "lab": {
+      "title": "ENCODE Processing Pipeline"
+    },
+    "origin_batches": [
+      "/biosamples/ENCBS224VRK/"
+    ],
+    "output_category": "signal",
+    "output_type": "haplotype-specific nuclease cleavage corrected frequency",
+    "quality_metrics": [],
+    "simple_biosample_summary": "male adult (43 years)",
+    "status": "released",
+    "step_run": {
+      "schema_version": "5",
+      "award": "/awards/U24HG009397/",
+      "aliases": [
+        "encode-processing-pipeline:_analysis-steps_hic-diploidification-step-v-1_-acb3e09c-cf3a-46fd-9a73-5b1c7ba98afa-b27071abc85561e1b0eb569f1af6a20f7d4b66e28c9d3f875caa51a0d7939449"
+      ],
+      "date_created": "2024-11-23T23:12:49.706566+00:00",
+      "@type": [
+        "AnalysisStepRun",
+        "Item"
+      ],
+      "submitted_by": "/users/1e75d989-a438-4d77-a451-8a297fd3636e/",
+      "@id": "/analysis-step-runs/981896b3-a31b-48f0-96ce-c95a6671c009/",
+      "lab": "/labs/encode-processing-pipeline/",
+      "uuid": "981896b3-a31b-48f0-96ce-c95a6671c009",
+      "analysis_step_version": "/analysis-step-versions/hic-diploidification-step-v-1-1/",
+      "status": "released"
+    },
+    "technical_replicates": [
+      "1_1",
+      "1_2"
+    ],
+    "title": "ENCFF883VDZ"
+  }
