@@ -52,15 +52,12 @@ def construct_json():
         futures = [executor.submit(fetch_file_json, url) for url in urls]
         for future in tqdm(concurrent.futures.as_completed(futures), total=len(futures), desc='Fetching files ...'):
             json_obj = future.result()
-            if json_obj is not None: # Handle case where file is not found
+            if json_obj is not None:
                 list_of_json_objs.append(json_obj)
                 
-    with open('encode_files_json.json', 'w') as f:
-        json.dump(list_of_json_objs, f)
-                
-    df = pl.DataFrame(list_of_json_objs)
-    print(df.head())
-    
-    df.write_parquet('encode_files_json.parquet')
+    with open('encode.jsonl', 'w') as f:
+         for obj in list_of_json_objs:
+            json.dump(obj, f)
+            f.write('\n')
         
     print("Saved all of encode, again >:)")

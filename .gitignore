@@ -11,3 +11,5 @@ wheels/
 
 # Large files
 *.parquet
+*.jsonl
+encode.json

@@ -1,0 +1,140 @@
+{
+    "@id": "/experiments/ENCSR220XSM/",
+    "@type": [
+        "Experiment",
+        "Dataset",
+        "Item"
+    ],
+    "accession": "ENCSR220XSM",
+    "assay_term_name": "PRO-cap",
+    "assay_title": "PRO-cap",
+    "audit": {
+        "INTERNAL_ACTION": [
+            {
+                "path": "/files/ENCFF155YEA/",
+                "level_name": "INTERNAL_ACTION",
+                "level": 30,
+                "name": "audit_item_relations_status",
+                "detail": "File {ENCFF155YEA|/files/ENCFF155YEA/} with status 'released' is derived from file {ENCFF267UZH|/files/ENCFF267UZH/} with status 'in progress'.",
+                "category": "mismatched status"
+            },
+            {
+                "path": "/files/ENCFF131OEV/",
+                "level_name": "INTERNAL_ACTION",
+                "level": 30,
+                "name": "audit_item_relations_status",
+                "detail": "File {ENCFF131OEV|/files/ENCFF131OEV/} with status 'released' is derived from file {ENCFF267UZH|/files/ENCFF267UZH/} with status 'in progress'.",
+                "category": "mismatched status"
+            }
+        ],
+        "NOT_COMPLIANT": [
+            {
+                "path": "/experiments/ENCSR220XSM/",
+                "level_name": "NOT_COMPLIANT",
+                "level": 50,
+                "name": "audit_experiment",
+                "detail": "This experiment is expected to be replicated, but contains only one listed biological replicate.",
+                "category": "unreplicated experiment"
+            }
+        ]
+    },
+    "award": {
+        "project": "ENCODE"
+    },
+    "biosample_ontology": {
+        "term_name": "K562",
+        "classification": "cell line"
+    },
+    "biosample_summary": "Homo sapiens K562",
+    "dbxrefs": [
+        "GEO:GSE284853"
+    ],
+    "description": "A run-on assay that precisely maps the transcription start sites genome-wide with high sensitivity and specificity in K562 cells.",
+    "files": [
+        {
+            "@id": "/files/ENCFF583FVG/"
+        },
+        {
+            "@id": "/files/ENCFF155YEA/"
+        },
+        {
+            "@id": "/files/ENCFF298PQK/"
+        },
+        {
+            "@id": "/files/ENCFF084GIA/"
+        },
+        {
+            "@id": "/files/ENCFF191TQL/"
+        },
+        {
+            "@id": "/files/ENCFF131OEV/"
+        },
+        {
+            "@id": "/files/ENCFF633JKZ/"
+        },
+        {
+            "@id": "/files/ENCFF082TEE/"
+        },
+        {
+            "@id": "/files/ENCFF850NZE/"
+        },
+        {
+            "@id": "/files/ENCFF364CCA/"
+        },
+        {
+            "@id": "/files/ENCFF918QKQ/"
+        },
+        {
+            "@id": "/files/ENCFF861JFD/"
+        },
+        {
+            "@id": "/files/ENCFF051LUE/"
+        },
+        {
+            "@id": "/files/ENCFF963WTD/"
+        }
+    ],
+    "lab": {
+        "title": "Haiyuan Yu, Cornell"
+    },
+    "related_series": [],
+    "replicates": [
+        {
+            "library": {
+                "biosample": {
+                    "organism": {
+                        "scientific_name": "Homo sapiens"
+                    },
+                    "age_display": "53 years",
+                    "life_stage": "adult",
+                    "accession": "ENCBS165TOO"
+                },
+                "construction_method": [
+                    "capped RNA enrichment"
+                ]
+            },
+            "@id": "/replicates/9938ce82-a8ca-4175-869c-a23bc9174ed2/",
+            "technical_replicate_number": 1,
+            "biological_replicate_number": 1
+        },
+        {
+            "library": {
+                "biosample": {
+                    "organism": {
+                        "scientific_name": "Homo sapiens"
+                    },
+                    "age_display": "53 years",
+                    "life_stage": "adult",
+                    "accession": "ENCBS165TOO"
+                },
+                "construction_method": [
+                    "capped RNA enrichment"
+                ]
+            },
+            "@id": "/replicates/3f19928c-14fd-4cfc-9f9e-4cec84014941/",
+            "technical_replicate_number": 2,
+            "biological_replicate_number": 1
+        }
+    ],
+    "status": "released"
+}

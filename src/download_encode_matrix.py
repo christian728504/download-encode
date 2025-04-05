@@ -15,14 +15,15 @@ def get_file_accessions():
     
     response = requests.get(url, headers=headers)
     data = response.json()
-    experiment_graph = data.get('@graph', [])
+    experiment_graph = data.get('@graph')
     
     accessions = []
     for experiment in tqdm(experiment_graph, desc='Getting file accessions'):
-        experiment_files = experiment.get('files', [])
-        experiment_files = [file.get('@id').split('/')[-2] for file in experiment_files] ## FUCK
-        if '' in experiment_files:
+        experiment_files = experiment.get('files')
+        if not experiment_files:
+            print(f"No files found for experiment!")
             sys.exit(0)
+        experiment_files = [file.get('@id').split('/')[-2] for file in experiment_files] ## FUCK
         accessions.extend(experiment_files)
     print(f"Found {len(accessions)} files")
     
@@ -128,5 +129,5 @@ def construct_matrix():
     df = pl.DataFrame(rows)
     print(df.head())
     
-    df.write_parquet('encode_files.parquet')
+    df.write_parquet('encode.parquet')
     print("Saved all of encode >:)")
