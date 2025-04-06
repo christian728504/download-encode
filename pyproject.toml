@@ -1,15 +1,18 @@
 [project]
 name = "encode_matrix"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.0.0"
+description = "A package to download ENCODE metadata from the REST API with additional methods for conversion to DataFrame and clean resulting DataFrame."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "ipykernel>=6.29.5",
-    "matplotlib>=3.10.1",
     "numpy>=2.2.4",
     "polars>=1.26.0",
-    "python-box>=7.3.2",
     "requests>=2.32.3",
     "tqdm>=4.67.1",
+]
+
+[dependency-groups]
+dev = [
+  "ipykernel>=6.29.5",
+  "matplotlib>=3.10.1",
 ]

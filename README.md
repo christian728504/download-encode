@@ -1,6 +1,16 @@
 # Download ENCODE file metadata into a polars dataframe
-- [x] Get all file accessions
-- [x] Fetch all file metadata
-- [x] Save all file metadata to a parquet file
-- [x] Clean the data
-- [ ] Make a polars struct using the ENCODE JSON schema (oh boy)
+
+## Install project with uv
+See [uv](https://docs.astral.sh/uv/getting-started/installation/) for os-specific installation instructions.
+
+```bash
+uv sync --no-dev
+```
+
+## Run example to register files
+```bash
+uv run main.py
+```
+
+## If you just want the files
+[Dropbox link]()
