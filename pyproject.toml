@@ -1,5 +1,5 @@
 [project]
-name = "encode-matrix"
+name = "encode_matrix"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
