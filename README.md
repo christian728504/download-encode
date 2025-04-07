@@ -1,8 +1,9 @@
 # Download ENCODE file metadata into a polars dataframe
 
-## Install project with uv
-See [uv](https://docs.astral.sh/uv/getting-started/installation/) for os-specific installation instructions.
+## To install the project dependencies you must first install uv, a python environment manager
+See [here](https://docs.astral.sh/uv/getting-started/installation/) for os-specific installation instructions.
 
+## Install dependencies
 ```bash
 uv sync --no-dev
 ```
