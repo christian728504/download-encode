@@ -8,7 +8,7 @@ See [here](https://docs.astral.sh/uv/getting-started/installation/) for os-speci
 uv sync --no-dev
 ```
 
-## Run example to register files
+## Run example to regenerate files
 ```bash
 uv run main.py
 ```
