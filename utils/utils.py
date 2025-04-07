@@ -1,5 +1,6 @@
 import requests
 from tqdm import tqdm
+import time
 
 # modified from https://gist.github.com/yanqd0/c13ed29e29432e3cf3e7c38467f42f51
 def download(url: str, fname: str, chunk_size=1024):
@@ -13,3 +14,7 @@ def download(url: str, fname: str, chunk_size=1024):
         for data in resp.iter_content(chunk_size=chunk_size):
             size = file.write(data)
             bar.update(size)
+            
+def get_date_string():
+    today = time.strftime("%d%m%Y_%H%M%S")
+    return today

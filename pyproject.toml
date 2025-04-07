@@ -1,6 +1,6 @@
 [project]
 name = "encode_matrix"
-version = "1.0.0"
+version = "1.1.0"
 description = "A package to download ENCODE metadata from the REST API with additional methods for conversion to DataFrame and clean resulting DataFrame."
 readme = "README.md"
 requires-python = ">=3.10"

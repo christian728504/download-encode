@@ -45,7 +45,7 @@ class EncodeMatrix:
         print(f"Total number of experiment-related files on ENCODE: {number_of_files}")
     
 
-    def to_static_json(self):
+    def to_json(self):
         try:
             url = self.format_url.format(f=self.schema_type)
         except:
@@ -87,7 +87,7 @@ class EncodeMatrix:
         print(f"Parquet file saved to {self.path}/encode_{self.schema_type}.parquet")
         
     
-    def filter_files_parquet(self):
+    def filter_parquet(self):
         print(f"Cleaning encode_{SchemaType.FILES.value}.parquet...")
         encode_files = pl.read_parquet(f'{self.path}/encode_{SchemaType.FILES.value}.parquet')
         drop_cols = encode_files.drop("@type", "audit", "quality_metrics", "replicate", "title")
