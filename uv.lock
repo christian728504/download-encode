@@ -309,7 +309,7 @@ requires-dist = [
 dev = [
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "matplotlib", specifier = ">=3.10.1" },
-    { name = "prettytable", specifier = ">=3.16.0" },
+    { name = "prettytable", git = "https://github.com/prettytable/prettytable" },
 ]
 
 [[package]]
@@ -852,14 +852,10 @@ wheels = [
 
 [[package]]
 name = "prettytable"
-version = "3.16.0"
-source = { registry = "https://pypi.org/simple" }
+version = "3.16.1.dev2"
+source = { git = "https://github.com/prettytable/prettytable#fcd0b8fb6d6a13d29204385f336c9da0767d4f8f" }
 dependencies = [
     { name = "wcwidth" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/99/b1/85e18ac92afd08c533603e3393977b6bc1443043115a47bb094f3b98f94f/prettytable-3.16.0.tar.gz", hash = "sha256:3c64b31719d961bf69c9a7e03d0c1e477320906a98da63952bc6698d6164ff57", size = 66276 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/02/c7/5613524e606ea1688b3bdbf48aa64bafb6d0a4ac3750274c43b6158a390f/prettytable-3.16.0-py3-none-any.whl", hash = "sha256:b5eccfabb82222f5aa46b798ff02a8452cf530a352c31bddfa29be41242863aa", size = 33863 },
 ]
 
 [[package]]

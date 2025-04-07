@@ -1,4 +1,4 @@
-from prettytable import PrettyTable
+from prettytable import PrettyTable, TableStyle
 
 column_names_and_descriptions = [
     ('id', 'The title of the file either the accession or the external_accession.'),
@@ -40,15 +40,15 @@ column_names_and_descriptions = [
 ]
 
 table = PrettyTable()
+table.set_style(TableStyle.MARKDOWN)
+table.align = "l"
 table.field_names = ["DataFrame Column", "Description"]
 
 for (column_name, desc) in column_names_and_descriptions:
     table.add_row([column_name, desc])
     
-table.align = 'l'
-table.max_width = 50
 table_string = table.get_formatted_string()
 with open('table.txt', 'w') as f:
     f.write(table_string) 
-    
+
     
