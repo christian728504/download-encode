@@ -90,22 +90,23 @@ class EncodeMatrix:
     def filter_files_parquet(self):
         print(f"Cleaning encode_{SchemaType.FILES.value}.parquet...")
         encode_files = pl.read_parquet(f'{self.path}/encode_{SchemaType.FILES.value}.parquet')
-        drop_cols = encode_files.drop("@type", "audit", "quality_metrics", "replicate")
+        drop_cols = encode_files.drop("@type", "audit", "quality_metrics", "replicate", "title")
 
         only_experiments = drop_cols.filter(pl.col("dataset").str.starts_with("/experiments"))
         filter_status_released = only_experiments.filter(pl.col("status") == "released")
+        drop_status = filter_status_released.drop("status")
 
-        bio_reps_to_list = filter_status_released.with_columns(pl.col("biological_replicates").str.json_decode(dtype=pl.List(pl.Int64)))
+        bio_reps_to_list = drop_status.with_columns(pl.col("biological_replicates").str.json_decode(dtype=pl.List(pl.Int64)))
         technical_reps_to_list = bio_reps_to_list.with_columns(pl.col("technical_replicates").str.json_decode(dtype=pl.List(pl.Utf8)))
         origin_batches_to_list = technical_reps_to_list.with_columns(pl.col("origin_batches").str.json_decode(dtype=pl.List(pl.Utf8)))
         derived_from_to_list = origin_batches_to_list.with_columns(pl.col("derived_from").str.json_decode(dtype=pl.List(pl.Utf8)))
 
-        clean_label = derived_from_to_list.with_columns(pl.col("target").str.json_path_match("$.label").alias("label"))
+        clean_label = derived_from_to_list.with_columns(pl.col("target").str.json_path_match("$.label").alias("target"))
         clean_biosample = clean_label.with_columns(pl.col("biosample_ontology").str.json_path_match("$.term_name").alias("biosample"))
         clean_organ_slims = clean_biosample.with_columns(pl.col("biosample_ontology").str.json_path_match("$.organ_slims").str.json_decode(dtype=pl.List(pl.Utf8)).alias("organ_slims"))
-        index_of_to_list = clean_organ_slims.with_columns(pl.col("index_of").str.json_decode(dtype=pl.List(pl.Utf8)).alias("index_of"))
-        drop_biosample_ontology = index_of_to_list.drop("biosample_ontology")
-        clean_award = drop_biosample_ontology.with_columns(pl.col("award").str.json_path_match("$.project").alias("award"))
+        drop_biosample_ontology = clean_organ_slims.drop("biosample_ontology")
+        index_of_to_list = drop_biosample_ontology.with_columns(pl.col("index_of").str.json_decode(dtype=pl.List(pl.Utf8)).alias("index_of"))
+        clean_award = index_of_to_list.with_columns(pl.col("award").str.json_path_match("$.project").alias("project"))
 
         clean_dataset = clean_award.with_columns(pl.col("dataset").str.split("/").list[2].alias("experiments"))
         drop_dataset = clean_dataset.drop("dataset")
@@ -131,7 +132,42 @@ class EncodeMatrix:
         clean_lab = drop_analysis_step_version.with_columns(pl.col("lab").str.json_path_match("$.title").alias("lab"))
         clean_step_run = clean_lab.with_columns(pl.col("step_run").str.json_path_match("$.analysis_step_version").str.split("/").list[2].alias("step_run"))
 
-        clean_encode_files = clean_step_run
+        clean_encode_files = clean_step_run.select(['id',
+                                                    'accession',
+                                                    'experiments',
+                                                    'assay_term_name',
+                                                    'biosample',
+                                                    'organ_slims',
+                                                    'simple_biosample_summary',
+                                                    'output_category',
+                                                    'output_type',
+                                                    'target',
+                                                    'file_format',
+                                                    'file_type',
+                                                    'file_format_type',
+                                                    'download_link',
+                                                    'assembly',
+                                                    'genome_annotation',
+                                                    'biological_replicates',
+                                                    'technical_replicates',
+                                                    'index_of',
+                                                    'derived_from',
+                                                    'origin_batches',
+                                                    'paired_with',
+                                                    'paired_end',
+                                                    'read_length',
+                                                    'run_type',
+                                                    'read_length_units',
+                                                    'mapped_read_length',
+                                                    'mapped_run_type',
+                                                    'step_run',
+                                                    'preferred_default',
+                                                    'file_size',
+                                                    'file_size_mb',
+                                                    'date_created',
+                                                    'project',
+                                                    'lab',
+                                                    'software']).sort("id")
         
         clean_encode_files.write_parquet(f"{self.path}/clean_encode_{SchemaType.FILES.value}.parquet")
         print(f"Cleaned data saved to clean_encode_{SchemaType.FILES.value}.parquet...")
